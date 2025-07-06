@@ -12,8 +12,7 @@ function buildQueryVariants(site: string): string[] {
 
 function isValidImage(item: any, site: string): boolean {
   const displayLink = item.displayLink || '';
-  const allowedDomains = [site, `www.${site}`];
-  return allowedDomains.includes(displayLink);
+  return displayLink.includes(site);
 }
 
 export default async function fetchImages(site: string): Promise<any[]> {
